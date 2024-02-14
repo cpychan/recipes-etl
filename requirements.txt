@@ -1,0 +1,6 @@
+
+## requirements
+
+1. Ensure you have Python version  3.11.5  installed on your system.
+2. No external third-party modules are required.
+3. Run the script using `code.py`.
