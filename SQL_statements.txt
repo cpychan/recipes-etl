@@ -1,0 +1,38 @@
+SQL statements
+
+Q1:
+SELECT p.product_sku
+FROM Customers c
+JOIN Subscriptions s ON c.id_customer = s.fk_customer
+JOIN Products p ON s.fk_product_subscribed_to = p.id_product
+WHERE c.email = 'ilovefood83@hotmail.com'
+AND s.status = 'active';
+
+Q2: 
+SELECT DISTINCT s.fk_customer AS id_customer
+FROM subscriptions s
+JOIN products p ON s.fk_product_subscribed_to = p.id_product
+WHERE p.product_family_handle = 'classic-box' AND s.status = 'active';
+
+Q3:
+SELECT fk_customer 
+FROM orders
+GROUP BY fk_customer
+WHERE COUNT(*) > 1;
+
+Q4:
+SELECT fk_customer, COUNT(*) 
+WHERE delivery_date BETWEEN DATE_SUB(CURRENT_DATE, INTERVAL 2 WEEK) AND CURRENT_DATE
+GROUP BY fk_customer;
+
+Q5:
+SELECT o.fk_customer, p.product_sku, o.delivery_date, o.purchase_price
+FROM Orders o
+JOIN Products p ON o.fk_product = p.id_product
+JOIN (
+    SELECT fk_customer, MAX(delivery_date) AS max_delivery_date
+    FROM Orders
+    GROUP BY fk_customer
+) max_dates ON o.fk_customer = max_dates.fk_customer AND o.delivery_date = max_dates.max_delivery_date;
+
+
