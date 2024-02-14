@@ -37,7 +37,6 @@ for recipe in recipes_with_chilies:
     print(recipe['name'])  # Print the name of each recipe that matches
 
 
-
 # Adjusted function to convert ISO 8601 duration to minutes
 def duration_to_minutes(iso_duration):
     if not iso_duration:
@@ -62,19 +61,18 @@ def determine_difficulty(prep_time, cook_time):
     else:
         return "Unknown"
 
-# Add difficulty field to each recipe
+# Add difficulty columns to each recipe
 for recipe in recipes_with_chilies:
     recipe['difficulty'] = determine_difficulty(recipe.get('prepTime', 'PT0M'), recipe.get('cookTime', 'PT0M'))
 
-# Example output to verify
+# Print example output to check the result
 for recipe in recipes_with_chilies:
     print(recipe['name'], "-", recipe['difficulty'])
 
-
-# Specify the path for your output CSV file
+# Covert output CSV file
 output_file_path = 'recipes-etl/recipes-with-difficulty.csv'
 
-# Define the column headers for the CSV file, including the new 'difficulty' field
+# Define the column headers for the CSV file
 headers = ['name', 'ingredients', 'url', 'image', 'cookTime', 'prepTime', 'difficulty']
 
 # Open the file in write mode and create a csv.writer object
