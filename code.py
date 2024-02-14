@@ -4,9 +4,7 @@ import re
 import csv
 
 # Get the directory of the current script
-directory_path = "recipes-etl"
-file_name = "recipes.json"
-file_path = os.path.join(directory_path, file_name)
+file_path = "recipes.json"
 
 # Load Data
 data = []
@@ -70,7 +68,7 @@ for recipe in recipes_with_chilies:
     print(recipe['name'], "-", recipe['difficulty'])
 
 # Covert output CSV file
-output_file_path = 'recipes-etl/recipes-with-difficulty.csv'
+output_file_path = 'recipes-with-difficulty.csv'
 
 # Define the column headers for the CSV file
 headers = ['name', 'ingredients', 'url', 'image', 'cookTime', 'prepTime', 'difficulty']
