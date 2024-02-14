@@ -17,8 +17,6 @@ with open(file_path, 'r', encoding='utf-8') as file:
 print(data[1])
 
 
-
-
 # Task 1
 # Compile a regular expression to include misspelling of the word
 chilies_misspell = re.compile(r'\bchil(?:i|e|le|ies|is)?s?\b', re.IGNORECASE)
@@ -34,7 +32,7 @@ recipes_with_chilies = [recipe for recipe in data if contains_chilies(recipe['in
 for recipe in recipes_with_chilies:
     print(recipe['name'])  # Print the name of each recipe that matches
 
-
+# Task 2 Proceed with the extracted recipes from Task 1 
 # Adjusted function to convert ISO 8601 duration to minutes
 def duration_to_minutes(iso_duration):
     if not iso_duration:
