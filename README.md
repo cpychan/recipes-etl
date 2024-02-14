@@ -21,7 +21,7 @@ Ensure you have Python 3.11.5 installed on your system. You can download it from
 1. Place your recipes.json file in a directory named recipes-etl at the same location as the script.
 2. Open your terminal or command prompt.
 3. Navigate to the directory containing the script.
-4. Run the script using Python:  code.py
+4. Run the script using the Python file:  code.py
 
 
 ## Understanding the Code
@@ -29,9 +29,9 @@ Ensure you have Python 3.11.5 installed on your system. You can download it from
 - It then loads the data from the JSON file into a list of dictionaries.
 - A regular expression is compiled to match the word "chilies" and its common misspellings in the ingredients list of each recipe.
 - Recipes containing chilies are filtered and processed to determine their cooking difficulty based on the total time required for preparation and cooking.
-- Finally, the filtered recipes, along with their difficulty levels, are exported to a CSV file in the specified directory.
+- Finally, the filtered recipes, along with the difficulty levels, are exported to a CSV file in the specified directory.
 Notes
-- The script assumes the presence of a recipes-etl directory in the same location as the script itself.
+- The script assumes the recipes-etl directory in the same location as the script itself.
 - The JSON file should contain one recipe per line, each as a separate JSON object.
-- For further assistance or to report bugs, please open an issue in the repository or contact the maintainer.
+
 
